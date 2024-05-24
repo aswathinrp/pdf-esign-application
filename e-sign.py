@@ -1,5 +1,5 @@
 import streamlit as st
-from PyPDF2 import PdfReader, PdfWriter
+from PyPDF2 import PdfFileReader, PdfReader, PdfWriter
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from PIL import Image
@@ -9,7 +9,7 @@ import tempfile
 def sign_pdf(pdf_file, signature_file):
     try:
         # Load PDF and Signature files
-        pdf_reader = PdfReader(pdf_file)
+        pdf_reader = PdfFileReader(pdf_file)
         pdf_writer = PdfWriter()
 
         # Read signature image
